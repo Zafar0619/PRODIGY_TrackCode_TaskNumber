@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="nav" class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const nav = document.getElementById("nav");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      });
+
+      nav.addEventListener("mouseover", (e) => {
+        if (e.target.tagName === "A") {
+          nav.classList.add("hovered");
+        }
+      });
+
+      nav.addEventListener("mouseout", (e) => {
+        if (e.target.tagName === "A") {
+          nav.classList.remove("hovered");
+        }
+      });
+    </script>
+  </body>
+</html>
